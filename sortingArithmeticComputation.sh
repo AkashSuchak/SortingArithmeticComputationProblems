@@ -1,7 +1,9 @@
 #! /bin/bash -x
 
 #AUTHOR : AKASH SUCHAK
-#WELCOME MESSAGE
+#WRITE PROGRAM TO TAKE THREE INPUTS - A, B & C
 
-#Display Welcome Message
-echo "Welcome to Arithmetic Computation & Sorting"
+#User Inputs
+read -p "Enter Value of a : " a
+read -p "Enter Value of b : " b
+read -p "Enter Value of c : " c
