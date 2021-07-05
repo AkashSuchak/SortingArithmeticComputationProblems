@@ -1,7 +1,7 @@
 #! /bin/bash -x
 
 #AUTHOR : AKASH SUCHAK
-#Read the values from the dictionary into the array
+#Sort The results to show the Coputation Result in the descending order
 
 #User Inputs
 read -p "Enter Value of a : " a
@@ -30,7 +30,7 @@ then
 	result4=`awk -v a=$a -v b=$b -v c=$c 'BEGIN{result=(a % b + c); print result}' `
 	computation_results[comp4]=$result4
 else
-     echo "Wrong Input!! Enter Integers Only."
+     echo "Wrong Input!! "
 fi
 
 index=0
@@ -43,4 +43,5 @@ do
 done
 
 #Display Array Values
-echo "Displaying Values From Array : "${valuesOfDictionary[@]}
+echo "Displaying Values From Array in Descending Order : "
+printf '%.2f\n' ${valuesOfDictionary[@]} | sort -nr
