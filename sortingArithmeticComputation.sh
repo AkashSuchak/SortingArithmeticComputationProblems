@@ -1,7 +1,7 @@
 #! /bin/bash -x
 
 #AUTHOR : AKASH SUCHAK
-#Sort The results to show the Coputation Result in the descending order
+#Sort The results to show the Coputation Value in the Ascending order
 
 #User Inputs
 read -p "Enter Value of a : " a
@@ -44,4 +44,4 @@ done
 
 #Display Array Values
 echo "Displaying Values From Array in Descending Order : "
-printf '%.2f\n' ${valuesOfDictionary[@]} | sort -nr
+printf '%.2f\n' ${valuesOfDictionary[@]} | sort -g
