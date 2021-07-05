@@ -1,7 +1,7 @@
 #! /bin/bash -x
 
 #AUTHOR : AKASH SUCHAK
-#Store the results in a Dictionary for every Computation
+#Read the values from the dictionary into the array
 
 #User Inputs
 read -p "Enter Value of a : " a
@@ -10,6 +10,9 @@ read -p "Enter Value of c : " c
 
 #Declaring Dictionary
 declare -A computation_results
+
+#Declaring Array
+declare -a valuesOfDictionary
 
 #Condition to check User Inputs are integer or not then we calculate
 if [[ $a ]] && [[ $b ]] && [[ $c ]] && [ $a -eq $a 2>/dev/null ] && [ $b -eq $b 2>/dev/null ] && [ $c -eq $c 2>/dev/null ]
@@ -30,5 +33,14 @@ else
      echo "Wrong Input!! Enter Integers Only."
 fi
 
-#Display Results of all Computation
-echo "Results of all Computation : ${computation_results[@]}"
+index=0
+
+#Dictionary value into array
+for key in ${!computation_results[@]}
+do
+	valuesOfDictionary[$index]=${computation_results[$key]}
+	index=$((index+1))
+done
+
+#Display Array Values
+echo "Displaying Values From Array : "${valuesOfDictionary[@]}
